@@ -1,0 +1,7 @@
+- alias: hasura
+  config:
+    configmap: controller-conf
+    namespace: quantifier67-hasura
+  data: null
+  kubeContext: quantifier67
+  name: quantifier67
