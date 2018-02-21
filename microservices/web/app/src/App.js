@@ -26,24 +26,31 @@ class App extends Component {
     }).then((response) => response.json())
     .then((data) => {
       this.setState({output:data})
-    }).catch( (err) => {
+    }).catch((err) => {
       console.log(err);
     });
   }
   showOutput(){
     if(this.state.output){
-      var items = this.state.output['keywords'];
-      return(
-        <JsonTable rows={items} />
-      );
+      if(!this.state.output['message']){
+        var items = this.state.output['keywords'];
+        console.log(items);
+        return(items.map( (keyword) => {
+          return(
+          <div className="output">
+            <h3>{keyword['text']}</h3>
+            <JsonTable className="output-table" rows={[keyword['emotion']]} />
+          </div>);
+        }));
+      }
+      return(this.state.output['message']);
     }
-    return("Nptjong")
   }
   render() {
     return (
       <div className="App">
         <div className="header">
-          <h1>Hello !</h1>
+          <h1>Welcome !</h1>
           This is a simple integration to demonstrate to you the power of Natural Language Processing APIs.
           This site uses the IBM Watson API for Processing your text.
           Enter some text below to see it's working.
@@ -58,7 +65,10 @@ class App extends Component {
             {this.showOutput()}
         </div>
         <div className="footer">
-          Powered by <img src="http://authenticmedicine.com/wp-content/uploads/2017/10/IBM-Watson_logo2-e1493752611672.png" alt="watson-logo"/>
+          Powered by IBM Watson
+        </div>
+        <div className="github">
+          <a href="https://github.com/AkshayRaman97/watson_integration"><img src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="repository"/></a>
         </div>
       </div>
     );

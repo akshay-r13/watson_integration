@@ -1,0 +1,56 @@
+.App {
+    width: 80%;
+    margin: auto;
+}
+
+.header {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 28px;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 70px;
+}
+.header h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 36px;
+    width: fit-content;
+    margin: 40px auto;
+}
+
+.form {
+    width: fit-content;
+    margin: auto;
+}
+
+.form input {
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+}
+
+.footer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+}
+
+.output {
+    display: block;
+    width:fit-content;
+    margin: auto;
+    text-align: center;
+}
+.output-table td{
+    padding: 10px;
+}
+.github {
+    width: fit-content;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+.github img{
+    height: 50px;
+    width: auto;
+}
