@@ -53,7 +53,7 @@ class App extends Component {
           <h1>Welcome !</h1>
           This is a simple integration to demonstrate to you the power of Natural Language Processing APIs.
           This site uses the IBM Watson API for Processing your text.
-          Enter some text below to see it's working.
+          Enter some text below to see its working.
         </div>
         <div className="form">
           <form>
