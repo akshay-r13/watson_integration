@@ -57,8 +57,8 @@ class App extends Component {
         </div>
         <div className="form">
           <form>
-            <input type="text" placeholder="Enter text here" onChange={this.handleTextChange.bind(this)}/>
-            <input type="submit" value="submit" onClick={this.handleSubmission.bind(this)}/>
+            <input className="form-text" type="text" placeholder="Enter text here" onChange={this.handleTextChange.bind(this)}/>
+            <input className="form-button" type="submit" value="submit" onClick={this.handleSubmission.bind(this)}/>
           </form>
         </div>
         <div className="output">
