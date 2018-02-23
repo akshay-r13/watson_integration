@@ -11,14 +11,14 @@ body {
 .header {
     font-family: 'Raleway', sans-serif;
     line-height: 28px;
-    font-size: 28px;
+    font-size: 22px;
     text-align: center;
-    margin-top: 70px;
+    margin-top: 30px;
     padding: 20px;
 }
 .header h1 {
     font-family: 'Shadows Into Light', cursive;
-    font-size: 72px;
+    font-size: 62px;
     width: fit-content;
     margin: 10px auto;
     padding: 30px;
@@ -32,14 +32,13 @@ body {
 }
 
 .form-text {
-    text-align: center;
     display: block;
     margin: 20px auto;
-    height: 40px;
+    height: 300px;
     width: 700px;
     font-family: 'Raleway', sans-serif;
-    font-size: 32px;
-    padding: 15px;
+    font-size: 22px;
+    padding: 25px;
     border: none;
 }
 

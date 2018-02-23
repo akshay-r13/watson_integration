@@ -36,11 +36,14 @@ class App extends Component {
         var items = this.state.output['keywords'];
         console.log(items);
         return(items.map( (keyword) => {
-          return(
-          <div className="output">
-            <h3>{keyword['text']}</h3>
-            <JsonTable className="output-table" rows={[keyword['emotion']]} />
-          </div>);
+          if(keyword['emotion']){
+            return(
+            <div className="output">
+              <h3>{keyword['text']}</h3>
+              <JsonTable className="output-table" rows={[keyword['emotion']]} />
+            </div>);
+          }
+          return(<div></div>);
         }));
       }
       return(this.state.output['message']);
@@ -57,7 +60,7 @@ class App extends Component {
         </div>
         <div className="form">
           <form>
-            <input className="form-text" type="text" placeholder="Enter text here" onChange={this.handleTextChange.bind(this)}/>
+            <textarea className="form-text" placeholder="Enter text here" onChange={this.handleTextChange.bind(this)}></textarea>
             <input className="form-button" type="submit" value="submit" onClick={this.handleSubmission.bind(this)}/>
           </form>
         </div>
