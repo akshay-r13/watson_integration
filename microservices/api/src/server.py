@@ -21,12 +21,10 @@ def intent():
             features=Features(
             entities=EntitiesOptions(
             emotion=True,
-            sentiment=True,
-            limit=2),
+            sentiment=True),
             keywords=KeywordsOptions(
             emotion=True,
-            sentiment=True,
-            limit=2)))
+            sentiment=True)))
         return(json.dumps(response, indent=2))
     except KeyError:
         return(jsonify({"message":"Invalid request"}))
