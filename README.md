@@ -1,14 +1,17 @@
 # Hasura - Watson Natural Language Classifier and Sentiment Analysis
 
-Watson natural language processing to analyze semantic features of any text. Provide plain text, HTML, or a public URL, and Natural Language Understanding returns results for the features you specify. We are using Hasura Platform to host the project on the cloud
+Watson natural language processing to analyze semantic features of any text. Provide plain text, HTML, or a public URL, and Natural Language Understanding returns results for the features you specify. We are using Hasura Platform to host the project on the cloud.
+
 
 ## Documents
 
 * **React Native** - [React Native README.md](https://github.com/AkshayRaman97/watson_integration/blob/master/React-Native/README.md) 
 * **React JS** - [React JS README.md](https://github.com/AkshayRaman97/watson_integration/blob/master/microservices/web/app/README.md) 
+- **To test the project on web browser -** [https://web.quantifier67.hasura-app.io/](https://web.quantifier67.hasura-app.io/) 
 
 ## Setting up your hasura cluster
 
+In order to host our project on the cloud for everyone to see we'll use the `hasura` platform.
 Follow the instructions in this section to setup a cluster to which you can push your project folder.
 
 ### Install `hasura-cli`.
@@ -102,4 +105,4 @@ Your application is now viewable to anyone with the link to your microservice.
 ## Contributors ( Team T23-PF1)
 * **Zunaid Sorathiya** - [Github profile](https://github.com/zedunaid) (React-Native)
 * **Akshay Raman** - [Github profile](https://github.com/AkshayRaman97) (React-JS + Python-Flask)
-* **Pavan Bellamkonda** (Python Flask)
+* **Pavan Bellamkonda** (Python-Flask)
