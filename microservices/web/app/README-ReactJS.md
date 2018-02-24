@@ -49,4 +49,4 @@ This app simply has a text area to accept input from the user and displays the r
 # Contributors
 
 * Akshay Raman - [Github profile](https://github.com/AkshayRaman97)
-* Zedunaid Sorathiya - [Github profile](https://github.com/zedunaid)
+* Zunaid Sorathiya - [Github profile](https://github.com/zedunaid)
