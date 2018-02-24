@@ -6,7 +6,7 @@ Watson natural language processing to analyze semantic features of any text. Pro
 ## Documents
 
 * **React Native** - [React Native README.md](https://github.com/AkshayRaman97/watson_integration/blob/master/React-Native/README.md) 
-* **React JS** - [React JS README.md](https://github.com/AkshayRaman97/watson_integration/blob/master/microservices/web/app/README.md) 
+* **React JS** - [React JS README.md](https://github.com/AkshayRaman97/watson_integration/blob/master/microservices/web/app/README-ReactJS.md) 
 - **To test the project on web browser -** [https://web.quantifier67.hasura-app.io/](https://web.quantifier67.hasura-app.io/) 
 
 ## Setting up your hasura cluster
