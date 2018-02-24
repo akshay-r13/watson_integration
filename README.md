@@ -1,55 +1,105 @@
-# base
+# Hasura - Watson Natural Language Classifier and Sentiment Analysis
 
-A blank template to be used as a starting point to build projects on Hasura. A "project" is a "gittable" directory in the file system, which captures all the information regarding clusters, services and migrations. It can also be used to keep source code for custom services that you write.
+Watson natural language processing to analyze semantic features of any text. Provide plain text, HTML, or a public URL, and Natural Language Understanding returns results for the features you specify. We are using Hasura Platform to host the project on the cloud
 
-## Files and Directories
+## Documents
 
-The project (a.k.a. project directory) has a particular directory structure and it has to be maintained strictly, else `hasura` cli would not work as expected. A representative project is shown below:
+* **React Native** - [React Native README.md](https://github.com/AkshayRaman97/watson_integration/blob/master/React-Native/README.md) 
+* **React JS** - [React JS README.md](https://github.com/AkshayRaman97/watson_integration/blob/master/microservices/web/app/README.md) 
 
-```
-.
-├── hasura.yaml
-├── clusters.yaml
-├── conf
-│   ├── authorized-keys.yaml
-│   ├── auth.yaml
-│   ├── ci.yaml
-│   ├── domains.yaml
-│   ├── filestore.yaml
-│   ├── gateway.yaml
-│   ├── http-directives.conf
-│   ├── notify.yaml
-│   ├── postgres.yaml
-│   ├── routes.yaml
-│   └── session-store.yaml
-├── migrations
-│   ├── 1504788327_create_table_userprofile.down.yaml
-│   ├── 1504788327_create_table_userprofile.down.sql
-│   ├── 1504788327_create_table_userprofile.up.yaml
-│   └── 1504788327_create_table_userprofile.up.sql
-└── microservices 
-    ├── adminer
-    │   └── k8s.yaml
-    └── flask
-        ├── src/
-        ├── k8s.yaml
-        └── Dockerfile
+## Setting up your hasura cluster
+
+Follow the instructions in this section to setup a cluster to which you can push your project folder.
+
+### Install `hasura-cli`.
+
+We'll need to install the hasura command line interface to use the hasura platform. To install use
+
+```bash
+$ curl -L https://hasura.io/install.sh | bash
 ```
 
-### `hasura.yaml`
+To check if it successfully installed use
 
-This file contains some metadata about the project, namely a name, description and some keywords. Also contains `platformVersion` which says which Hasura platform version is compatible with this project.
+```bash
+$ hasura version
 
-### `clusters.yaml`
 
-Info about the clusters added to this project can be found in this file. Each cluster is defined by it's name allotted by Hasura. While adding the cluster to the project you are prompted to give an alias, which is just hasura by default. The `kubeContext` mentions the name of kubernetes context used to access the cluster, which is also managed by hasura. The `config` key denotes the location of cluster's metadata on the cluster itself. This information is parsed and cluster's metadata is appended while conf is rendered. `data` key is for holding custom variables that you can define.
-
-```yaml
-- name: h34-ambitious93-stg
-  alias: hasura
-  kubeContext: h34-ambitious93-stg
-  config:
-    configmap: controller-conf
-    namespace: hasura
-  data: null  
+hasura version: v0.2.45
 ```
+
+### Login to hasura
+
+Create an account or login to hasura using
+
+```bash
+$ hasura login
+```
+Your browser will open a link where you can register or login to hasura.
+
+### Create a cluster
+
+To create a cluster you can use the hasura free tier system.
+
+```bash
+$ hasura cluster create --type=free
+
+
+INFO Creating a Hasura cluster...
+INFO Hasura cluster created                        cluster=quantifier67
+INFO Initializing the cluster...
+INFO Cluster initialized
+INFO Kubernetes context has been added to this system  context=quantifier67
+```
+
+Note your cluster name. In this case it is `quantifier67`.
+
+### Add cluster to your project
+
+To add a cluster to this project use the following commands.
+
+```bash
+# Add cluster
+$ hasura cluster add quantifier67 -c hasura
+
+# Set this cluster as the default
+$ hasura cluster set-default hasura
+
+# Add ssh-key
+$ hasura ssh-key add -c hasura
+```
+
+### Pushing your code to the cluster
+
+Follow the below steps.
+
+```bash
+# Go to your project folder
+$ cd /home/user/projects/watson_integration
+
+# Add all files for commit
+$ git add .
+
+# Commit files
+$ git commit -m "First commit"
+
+# Push to hasura cluster
+$ git push hasura master
+```
+This will take some time to execute. After it is done use the following command to view your app.
+
+```bash
+# To view the api microservice
+$ hasura microservice open api
+
+# To view the app microservice
+$ hasura microservice open app
+```
+Your application is now viewable to anyone with the link to your microservice.
+
+>For more info on managing clusters and hosting your project refer to the [hasura documentation](https://docs.hasura.io/0.15/manual/cluster/index.html).
+
+## Contributors ( Team T23-PF1)
+* **Zunaid Sorathiya** - [Github profile](https://github.com/zedunaid) (React-Native)
+* **Akshay Raman** - [Github profile](https://github.com/AkshayRaman97) (React-JS + Python-Flask)
+* **Pavan Bellamkonda** (Python Flask)
